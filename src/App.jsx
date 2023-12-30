@@ -13,12 +13,3 @@ function App() {
 }
 
 export default App;
-
-fetch(
-  'https://gateway.marvel.com:443/v1/public/characters?apikey=06a4a6f08841c6b08d6ec9ce409004fd',
-  {
-    mode: 'cors',
-  },
-)
-  .then((response) => response.json())
-  .then((data) => console.log(data));

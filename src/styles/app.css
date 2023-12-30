@@ -42,15 +42,13 @@ body {
 .home-container {
   width: 100%;
   height: 100%;
-  background-color: var(--background-color);
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: column;
+  background-color: transparent;
 }
 
 .heading-text {
   font-size: 60rem;
+  font-family: 'Helvetica', sans-serif;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 }
 
 .home-main {
@@ -62,25 +60,21 @@ body {
 }
 
 .play-btn {
-  margin-top: 40px;
+  position: absolute;
+  top: 20px;
+  left: 20px;
   appearance: none;
   outline: none;
   border: none;
   font-size: 23rem;
   padding: 16px 60px;
-  background-color: green;
+  background-color: var(--tertiary-color);
+  color: var(--text-light);
+  font-weight: 1000;
+  border-radius: 15px;
   transition: all 200ms ease-in-out;
   cursor: pointer;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.header,
-.footer {
-  font-size: 17rem;
-}
-
-.header {
-  margin-top: 25px;
 }
 
 .home-buttons {
@@ -124,26 +118,4 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-}
-
-.footer {
-  display: flex;
-  gap: 5px;
-  justify-content: center;
-  align-items: center;
-  margin-bottom: 25px;
-}
-
-.github-logo {
-  width: 22px;
-  height: 22px;
-  background-image: url(../assets/img/github-logo.png);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: contain;
-}
-
-a {
-  text-decoration: none;
-  color: var(--text-light);
 }
