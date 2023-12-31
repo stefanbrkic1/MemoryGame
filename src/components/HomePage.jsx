@@ -28,8 +28,8 @@ function HomePage({ setActivePage }) {
           style={{
             backgroundImage: `url(${
               soundState === 'off'
-                ? '../src/assets/img/sound-on.svg'
-                : '../src/assets/img/sound-off.svg'
+                ? 'src/assets/img/sound-on.svg'
+                : 'src/assets/img/sound-off.svg'
             })`,
           }}
         ></div>
