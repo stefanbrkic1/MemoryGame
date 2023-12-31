@@ -23,16 +23,7 @@ function HomePage({ setActivePage }) {
         className="home-buttons sound-btn"
         onClick={handleSound}
       >
-        <div
-          className="sound-btn-icon"
-          style={{
-            backgroundImage: `url(${
-              soundState === 'off'
-                ? 'src/assets/img/sound-on.svg'
-                : 'src/assets/img/sound-off.svg'
-            })`,
-          }}
-        ></div>
+        <div className="sound-btn-icon"></div>
       </button>
       <button
         type="button"
