@@ -7,7 +7,6 @@ function HomePage({ setActivePage }) {
     soundState === 'off' ? setSoundState('on') : setSoundState('off');
   }
 
-  function handleInfo() {}
   return (
     <div className="home-container">
       {/* Main content section */}
@@ -24,13 +23,6 @@ function HomePage({ setActivePage }) {
         onClick={handleSound}
       >
         <div className="sound-btn-icon"></div>
-      </button>
-      <button
-        type="button"
-        className="home-buttons info-btn"
-        onClick={handleInfo}
-      >
-        <div className="info-btn-icon"></div>
       </button>
     </div>
   );

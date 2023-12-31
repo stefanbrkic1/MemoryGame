@@ -28,6 +28,7 @@ body {
 body {
   font-size: 16rem;
   color: var(--text-light);
+  font-family: 'Helvetica', sans-serif;
 }
 
 #root {
@@ -61,8 +62,9 @@ body {
 
 .play-btn {
   position: absolute;
-  top: 20px;
-  left: 20px;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   appearance: none;
   outline: none;
   border: none;
@@ -119,4 +121,70 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
+}
+
+.info-modal {
+  position: absolute;
+  z-index: 1000;
+  width: 700px;
+  border: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--tertiary-color);
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.info-para {
+  font-size: 18rem;
+}
+
+.modal-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid white;
+  padding: 15px;
+}
+
+.info-heading {
+  font-size: 25rem;
+  font-weight: bold;
+}
+
+.how-to {
+  font-size: 18rem;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.modal-body {
+  padding: 26px;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #161717;
+  opacity: 70%;
+  pointer-events: none;
+  z-index: 999;
+}
+
+.close-modal-btn {
+  width: 25px;
+  height: 25px;
+  background-image: url(../assets/img/x-mark.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  appearance: none;
+  outline: none;
 }
