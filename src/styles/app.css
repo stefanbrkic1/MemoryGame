@@ -171,7 +171,6 @@ body {
   bottom: 0;
   background-color: #161717;
   opacity: 70%;
-  pointer-events: none;
   z-index: 999;
 }
 
