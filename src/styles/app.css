@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'Roblox';
+  src: url(../assets/fonts/Roblox.ttf);
+}
+
 :root {
   --primary-color: #5281ce;
   --secondary-color: #ff9a9f;
@@ -46,12 +51,6 @@ body {
   background-color: transparent;
 }
 
-.heading-text {
-  font-size: 60rem;
-  font-family: 'Helvetica', sans-serif;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-}
-
 .home-main {
   display: flex;
   justify-content: center;
@@ -62,14 +61,14 @@ body {
 
 .play-btn {
   position: absolute;
-  top: 30%;
+  top: 32%;
   left: 50%;
   transform: translate(-50%, -50%);
   appearance: none;
   outline: none;
   border: none;
-  font-size: 23rem;
-  padding: 16px 60px;
+  font-size: 35rem;
+  padding: 13px 70px;
   background-color: var(--tertiary-color);
   color: var(--text-light);
   font-weight: 1000;
@@ -77,6 +76,18 @@ body {
   transition: all 200ms ease-in-out;
   cursor: pointer;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border: 4px solid white;
+}
+
+.play-btn:hover {
+  background-color: #2eb95f;
+}
+
+.home-heading {
+  margin-bottom: 20px;
+  font-size: 85rem;
+  font-weight: bold;
+  font-family: 'Roblox';
 }
 
 .home-buttons {
