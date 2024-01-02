@@ -1,7 +1,17 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function HomePage({ setActivePage }) {
   const [soundState, setSoundState] = useState('off');
+
+  useEffect(() => {
+    const audio = document.getElementById('audio');
+
+    if (soundState === 'on') {
+      audio.play();
+    } else {
+      audio.pause();
+    }
+  }, [soundState]);
 
   function handleSound() {
     soundState === 'off' ? setSoundState('on') : setSoundState('off');
@@ -22,7 +32,9 @@ function HomePage({ setActivePage }) {
         className="home-buttons sound-btn"
         onClick={handleSound}
       >
-        <div className="sound-btn-icon"></div>
+        <div
+          className={soundState === 'on' ? 'sound-on-icon' : 'sound-off-icon'}
+        ></div>
       </button>
     </div>
   );

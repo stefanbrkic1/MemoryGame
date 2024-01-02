@@ -1,6 +1,6 @@
 @font-face {
-  font-family: 'Roblox';
-  src: url(../assets/fonts/Roblox.ttf);
+  font-family: 'Horror';
+  src: url(../assets/fonts/get_schwifty.ttf);
 }
 
 :root {
@@ -56,14 +56,11 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin-bottom: 10%;
+  height: 100%;
 }
 
 .play-btn {
-  position: absolute;
-  top: 32%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  margin-bottom: 20%;
   appearance: none;
   outline: none;
   border: none;
@@ -81,13 +78,7 @@ body {
 
 .play-btn:hover {
   background-color: #2eb95f;
-}
-
-.home-heading {
-  margin-bottom: 20px;
-  font-size: 85rem;
-  font-weight: bold;
-  font-family: 'Roblox';
+  transform: scale(1.1);
 }
 
 .home-buttons {
@@ -111,10 +102,19 @@ body {
   left: 0;
 }
 
-.sound-btn-icon {
+.sound-on-icon {
   width: 30px;
   height: 30px;
   background-image: url(../assets/img/sound-on.svg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.sound-off-icon {
+  width: 30px;
+  height: 30px;
+  background-image: url(../assets/img/sound-off.svg);
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
