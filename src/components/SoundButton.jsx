@@ -18,20 +18,15 @@ function SoundButton() {
   }
 
   return (
-    <>
-      <button
-        type="button"
-        className="home-buttons sound-btn"
-        onClick={handleSound}
-      >
-        <div
-          className={soundState === 'on' ? 'sound-on-icon' : 'sound-off-icon'}
-        ></div>
-      </button>
-
-      {/*Audio*/}
-      <audio src="../src/assets/audio/theme-song.mp3" id="audio" loop></audio>
-    </>
+    <button
+      type="button"
+      className="home-buttons sound-btn"
+      onClick={handleSound}
+    >
+      <div
+        className={soundState === 'on' ? 'sound-on-icon' : 'sound-off-icon'}
+      ></div>
+    </button>
   );
 }
 
