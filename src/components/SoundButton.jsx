@@ -30,7 +30,7 @@ function SoundButton() {
       </button>
 
       {/*Audio*/}
-      <audio src="../src/assets/audio/theme-song.mp3" id="audio" loop></audio>
+      <audio src="../src/assets/theme-song.mp3" id="audio" loop></audio>
     </>
   );
 }
