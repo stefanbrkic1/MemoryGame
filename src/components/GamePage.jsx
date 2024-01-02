@@ -1,5 +1,12 @@
 function GamePage({ setActivePage }) {
-  return <div onClick={setActivePage}>GAME PAGE</div>;
+  return (
+    <div className="cards-container">
+      <div className="card"></div>
+      <div className="card"></div>
+      <div className="card"></div>
+      <div className="card"></div>
+    </div>
+  );
 }
 
 export default GamePage;

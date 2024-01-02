@@ -1,6 +1,3 @@
-import SoundButton from './SoundButton';
-import InfoModal from './Info';
-
 function HomePage({ setActivePage }) {
   return (
     <div className="home-container">
@@ -10,10 +7,6 @@ function HomePage({ setActivePage }) {
           PLAY
         </button>
       </main>
-
-      {/*Sound and Info Buttons */}
-      <SoundButton />
-      <InfoModal />
     </div>
   );
 }
