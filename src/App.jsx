@@ -17,13 +17,6 @@ function App() {
       {/*Sound and Info Buttons */}
       <SoundButton />
       <InfoModal />
-      <audio
-        src={import.meta.env.BASE_URL + 'src/assets/audio/theme-song.mp3'}
-        type="audio/mp3"
-        id="audio"
-        loop
-        controls
-      ></audio>
     </>
   );
 }
