@@ -1,11 +1,16 @@
+import PlayGround from './PlayGround';
+
 function GamePage({ setActivePage }) {
   return (
-    <div className="cards-container">
-      <div className="card"></div>
-      <div className="card"></div>
-      <div className="card"></div>
-      <div className="card"></div>
-    </div>
+    <>
+      {/*Home Button*/}
+      <div className="home-btn" onClick={setActivePage}>
+        HOME PAGE
+      </div>
+
+      {/*PlayGround for cards*/}
+      <PlayGround />
+    </>
   );
 }
 
