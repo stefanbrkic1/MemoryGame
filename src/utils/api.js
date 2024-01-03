@@ -12,8 +12,13 @@ export default async function fetchData() {
 
     //Remove invalid API property
     data.results.splice(18, 1);
+    //Add isClicked property
+    const charactersData = data.results.map((character) => ({
+      ...character,
+      isClicked: false,
+    }));
 
-    return data.results;
+    return charactersData;
   } catch (error) {
     throw new Error(`Failed to fetch data: ${error.message}`);
   }

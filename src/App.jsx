@@ -13,11 +13,7 @@ function App() {
   useEffect(() => {
     fetchData()
       .then((data) => {
-        const charactersData = data.map((character) => ({
-          ...character,
-          isClicked: false,
-        }));
-        setCharacters(charactersData);
+        setCharacters(data);
       })
       .catch((error) => console.error(error));
   }, [activePage]);
