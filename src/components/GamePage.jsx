@@ -9,7 +9,11 @@ function GamePage({ setActivePage, characters, setCharacters }) {
       </div>
 
       {/*PlayGround for cards*/}
-      <PlayGround characters={characters} setCharacters={setCharacters} />
+      <PlayGround
+        setActivePage={setActivePage}
+        characters={characters}
+        setCharacters={setCharacters}
+      />
     </>
   );
 }

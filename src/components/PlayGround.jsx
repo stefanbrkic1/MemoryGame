@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-function PlayGround({ characters, setCharacters }) {
+function PlayGround({ setActivePage, characters, setCharacters }) {
   const [round, setRound] = useState(0);
   const [displayingCharacters, setDisplayingCharacters] = useState([]);
   const [gameOverState, setGameOverState] = useState('PLAYING');
@@ -86,7 +86,13 @@ function PlayGround({ characters, setCharacters }) {
           <div className="game-over-modal">
             <div className="game-over-text">GAME OVER</div>
             <div className="game-over-state">YOU {`${gameOverState}`}</div>
-            <button type="button">PLAY AGAIN</button>
+            <button
+              type="button"
+              className="play-again-btn"
+              onClick={() => setActivePage(0)}
+            >
+              PLAY AGAIN
+            </button>
           </div>
           <div className="overlay"></div>
         </>
