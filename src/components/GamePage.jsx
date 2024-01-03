@@ -1,6 +1,6 @@
 import PlayGround from './PlayGround';
 
-function GamePage({ setActivePage }) {
+function GamePage({ setActivePage, characters }) {
   return (
     <>
       {/*Home Button*/}
@@ -9,7 +9,7 @@ function GamePage({ setActivePage }) {
       </div>
 
       {/*PlayGround for cards*/}
-      <PlayGround />
+      <PlayGround characters={characters} />
     </>
   );
 }
