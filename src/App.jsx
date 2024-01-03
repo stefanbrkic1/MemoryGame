@@ -13,10 +13,14 @@ function App() {
   useEffect(() => {
     fetchData()
       .then((data) => {
-        setCharacters(data);
+        const charactersData = data.map((character) => ({
+          ...character,
+          isClicked: false,
+        }));
+        setCharacters(charactersData);
       })
       .catch((error) => console.error(error));
-  }, []);
+  }, [activePage]);
 
   return (
     <>
@@ -26,6 +30,7 @@ function App() {
         <GamePage
           setActivePage={() => setActivePage(0)}
           characters={characters}
+          setCharacters={setCharacters}
         />
       )}
       <SoundButton />

@@ -245,6 +245,33 @@ body {
   cursor: pointer;
 }
 
+.game-over-modal {
+  position: absolute;
+  z-index: 1000;
+  padding: 25px;
+  border: none;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--tertiary-color);
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.game-over-text {
+  font-size: 30rem;
+  font-weight: bold;
+}
+
+.game-over-state {
+  font-size: 20rem;
+}
+
 /* Smartphones */
 @media only screen and (max-width: 767px) {
   .card {

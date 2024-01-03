@@ -10,6 +10,9 @@ export default async function fetchData() {
 
     const data = await response.json();
 
+    //Remove invalid API property
+    data.results.splice(18, 1);
+
     return data.results;
   } catch (error) {
     throw new Error(`Failed to fetch data: ${error.message}`);
