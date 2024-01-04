@@ -93,6 +93,11 @@ body {
   align-items: center;
   background-color: #39c56a;
   cursor: pointer;
+  transition: all 80ms ease-in;
+}
+
+.home-buttons:hover {
+  transform: scale(1.1);
 }
 
 .sound-on-icon {
@@ -229,9 +234,18 @@ body {
 }
 
 .home-btn {
-  background-color: var(--tertiary-color);
-  padding: 10px;
+  width: 250px;
+  height: 100px;
+  background-image: url(../assets/img/logo.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
   cursor: pointer;
+  transition: all 80ms ease-in;
+}
+
+.home-btn:hover {
+  transform: scale(1.1);
 }
 
 .game-over-modal {
