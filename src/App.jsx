@@ -8,6 +8,7 @@ import fetchData from './utils/api';
 function App() {
   const [activePage, setActivePage] = useState(0);
   const [characters, setCharacters] = useState([]);
+  const [highestScore, setHighestScore] = useState(0);
 
   // Fetch characters data from API
   useEffect(() => {
@@ -27,6 +28,8 @@ function App() {
           setActivePage={() => setActivePage(0)}
           characters={characters}
           setCharacters={setCharacters}
+          highestScore={highestScore}
+          setHighestScore={setHighestScore}
         />
       )}
       <SoundButton />

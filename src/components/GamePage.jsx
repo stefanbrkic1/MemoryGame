@@ -1,6 +1,12 @@
 import PlayGround from './PlayGround';
 
-function GamePage({ setActivePage, characters, setCharacters }) {
+function GamePage({
+  setActivePage,
+  characters,
+  setCharacters,
+  highestScore,
+  setHighestScore,
+}) {
   return (
     <>
       {/*Home Button*/}
@@ -13,6 +19,8 @@ function GamePage({ setActivePage, characters, setCharacters }) {
         setActivePage={setActivePage}
         characters={characters}
         setCharacters={setCharacters}
+        highestScore={highestScore}
+        setHighestScore={setHighestScore}
       />
     </>
   );

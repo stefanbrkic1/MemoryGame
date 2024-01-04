@@ -1,11 +1,19 @@
 import { useState, useEffect } from 'react';
 
-function PlayGround({ setActivePage, characters, setCharacters }) {
+function PlayGround({
+  setActivePage,
+  characters,
+  setCharacters,
+  highestScore,
+  setHighestScore,
+}) {
   const [round, setRound] = useState(0);
   const [displayingCharacters, setDisplayingCharacters] = useState([]);
   const [gameOverState, setGameOverState] = useState('PLAYING');
 
-  useEffect(() => {}, [gameOverState]);
+  useEffect(() => {
+    round > highestScore && setHighestScore((prevScore) => round);
+  }, [gameOverState]);
 
   //Shuffle characters for each round
   useEffect(() => {
@@ -65,39 +73,47 @@ function PlayGround({ setActivePage, characters, setCharacters }) {
   }
 
   return (
-    <main className="cards-container">
-      {displayingCharacters.map((character) => {
-        return (
-          <div
-            className="card"
-            key={character.id}
-            onClick={(e) => handleCardClick(character.id)}
-          >
+    <>
+      <main className="cards-container">
+        {displayingCharacters.map((character) => {
+          return (
             <div
-              className="card-image"
-              style={{ backgroundImage: `url(${character.image})` }}
-            ></div>
-            <div className="card-text">{character.name}</div>
-          </div>
-        );
-      })}
-      {gameOverState !== 'PLAYING' && (
-        <>
-          <div className="game-over-modal">
-            <div className="game-over-text">GAME OVER</div>
-            <div className="game-over-state">YOU {`${gameOverState}`}</div>
-            <button
-              type="button"
-              className="play-again-btn"
-              onClick={() => setActivePage(0)}
+              className="card"
+              key={character.id}
+              onClick={(e) => handleCardClick(character.id)}
             >
-              PLAY AGAIN
-            </button>
-          </div>
-          <div className="overlay"></div>
-        </>
-      )}
-    </main>
+              <div
+                className="card-image"
+                style={{ backgroundImage: `url(${character.image})` }}
+              ></div>
+              <div className="card-text">{character.name}</div>
+            </div>
+          );
+        })}
+        {gameOverState !== 'PLAYING' && (
+          <>
+            <div className="game-over-modal">
+              <div className="game-over-text">GAME OVER</div>
+              <div className="game-over-state">YOU {`${gameOverState}`}</div>
+              <button
+                type="button"
+                className="play-again-btn"
+                onClick={() => setActivePage(0)}
+              >
+                PLAY AGAIN
+              </button>
+            </div>
+            <div className="overlay"></div>
+          </>
+        )}
+      </main>
+
+      {/*Scorebaoard */}
+      <div className="scoreboard">
+        <div className="highest-score">HIGHEST SCORE: {highestScore}</div>
+        <div className="current-score">SCORE: {round}</div>
+      </div>
+    </>
   );
 }
 

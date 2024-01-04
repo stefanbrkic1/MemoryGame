@@ -287,6 +287,14 @@ body {
   border: 4px solid white;
 }
 
+.scoreboard {
+  background-color: var(--tertiary-color);
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  padding: 10px;
+}
+
 /* Smartphones */
 @media only screen and (max-width: 767px) {
   .card {
