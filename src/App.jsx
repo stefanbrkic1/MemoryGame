@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import HomePage from './components/HomePage';
-import GamePage from './components/GamePage';
+import PlayGround from './components/PlayGround';
 import SoundButton from './components/SoundButton';
 import InfoModal from './components/Info';
 import fetchData from './utils/api';
@@ -24,7 +24,7 @@ function App() {
       {activePage === 0 ? (
         <HomePage setActivePage={() => setActivePage(1)} />
       ) : (
-        <GamePage
+        <PlayGround
           setActivePage={() => setActivePage(0)}
           characters={characters}
           setCharacters={setCharacters}
@@ -32,8 +32,10 @@ function App() {
           setHighestScore={setHighestScore}
         />
       )}
-      <SoundButton />
-      <InfoModal />
+      <div className="footer-buttons">
+        <SoundButton />
+        <InfoModal />
+      </div>
     </>
   );
 }

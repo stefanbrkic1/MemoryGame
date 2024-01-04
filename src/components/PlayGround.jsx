@@ -74,22 +74,39 @@ function PlayGround({
 
   return (
     <>
-      <main className="cards-container">
-        {displayingCharacters.map((character) => {
-          return (
-            <div
-              className="card"
-              key={character.id}
-              onClick={(e) => handleCardClick(character.id)}
-            >
+      <div className="playground-top">
+        {/*Home Button*/}
+        <div className="home-btn" onClick={setActivePage}>
+          HOME PAGE
+        </div>
+        {/*Scorebaoard */}
+        <div className="scoreboard">
+          <div className="highest-score">HIGHEST SCORE: {highestScore}</div>
+          <div className="current-score">SCORE: {round}</div>
+        </div>
+      </div>
+
+      {/*CARDS */}
+      <div className="playground-container">
+        <main className="cards-container">
+          {displayingCharacters.map((character) => {
+            return (
               <div
-                className="card-image"
-                style={{ backgroundImage: `url(${character.image})` }}
-              ></div>
-              <div className="card-text">{character.name}</div>
-            </div>
-          );
-        })}
+                className="card"
+                key={character.id}
+                onClick={(e) => handleCardClick(character.id)}
+              >
+                <div
+                  className="card-image"
+                  style={{ backgroundImage: `url(${character.image})` }}
+                ></div>
+                <div className="card-text">{character.name}</div>
+              </div>
+            );
+          })}
+        </main>
+
+        {/*GAME OVER MODAL */}
         {gameOverState !== 'PLAYING' && (
           <>
             <div className="game-over-modal">
@@ -106,12 +123,6 @@ function PlayGround({
             <div className="overlay"></div>
           </>
         )}
-      </main>
-
-      {/*Scorebaoard */}
-      <div className="scoreboard">
-        <div className="highest-score">HIGHEST SCORE: {highestScore}</div>
-        <div className="current-score">SCORE: {round}</div>
       </div>
     </>
   );

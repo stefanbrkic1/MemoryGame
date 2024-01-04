@@ -39,10 +39,10 @@ body {
 #root {
   width: 100%;
   height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
   position: relative;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
 }
 
 .home-container {
@@ -82,8 +82,6 @@ body {
 }
 
 .home-buttons {
-  position: absolute;
-  margin: 20px;
   appearance: none;
   border: none;
   outline: none;
@@ -95,11 +93,6 @@ body {
   align-items: center;
   background-color: #39c56a;
   cursor: pointer;
-}
-
-.sound-btn {
-  bottom: 0;
-  left: 0;
 }
 
 .sound-on-icon {
@@ -118,11 +111,6 @@ body {
   background-position: center;
   background-repeat: no-repeat;
   background-size: contain;
-}
-
-.info-btn {
-  bottom: 0;
-  right: 0;
 }
 
 .info-btn-icon {
@@ -222,7 +210,7 @@ body {
 }
 
 .card-image {
-  flex: 1;
+  flex: 7;
   width: 100%;
   height: 100%;
   background-position: center;
@@ -233,14 +221,15 @@ body {
 .card-text {
   font-size: 16rem;
   font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   text-align: center;
+  flex: 1;
 }
 
 .home-btn {
   background-color: var(--tertiary-color);
-  position: absolute;
-  top: 20px;
-  left: 20px;
   padding: 10px;
   cursor: pointer;
 }
@@ -289,20 +278,64 @@ body {
 
 .scoreboard {
   background-color: var(--tertiary-color);
-  position: absolute;
-  right: 20px;
-  top: 20px;
   padding: 10px;
+}
+
+.playground-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.playground-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+.footer-buttons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 /* Smartphones */
 @media only screen and (max-width: 767px) {
+  #root {
+    gap: 20px;
+  }
   .card {
     width: 150px;
     height: 200px;
+  }
+  .play-btn {
+    margin-bottom: 70%;
+  }
+  .card {
+    padding: 10px;
+  }
+  .footer-buttons {
+    padding: 10px 0px;
   }
 }
 
 /* Tablets */
 @media only screen and (min-width: 768px) and (max-width: 1023px) {
+  .card {
+    width: 180px;
+    height: 230px;
+  }
+  .play-btn {
+    margin-bottom: 70%;
+  }
+}
+
+/* Tablets */
+@media only screen and (min-width: 769px) and (max-width: 1461px) {
+  .card {
+    width: 210px;
+    height: 280px;
+  }
 }
