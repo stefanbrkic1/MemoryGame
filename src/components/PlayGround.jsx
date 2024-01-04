@@ -76,9 +76,7 @@ function PlayGround({
     <>
       <div className="playground-top">
         {/*Home Button*/}
-        <div className="home-btn" onClick={setActivePage}>
-          HOME PAGE
-        </div>
+        <div className="home-btn" onClick={setActivePage}></div>
         {/*Scorebaoard */}
         <div className="scoreboard">
           <div className="highest-score">HIGHEST SCORE: {highestScore}</div>
