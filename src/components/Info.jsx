@@ -1,6 +1,6 @@
 import { Fragment, useState } from 'react';
 
-function InfoModal() {
+function InfoModal({ playClickSound }) {
   const [isModalOpen, setIsModalOpen] = useState(false);
 
   return (
@@ -9,7 +9,10 @@ function InfoModal() {
       <button
         type="button"
         className="home-buttons info-btn"
-        onClick={() => setIsModalOpen(true)}
+        onClick={() => {
+          playClickSound();
+          setIsModalOpen(true);
+        }}
       >
         <div className="info-btn-icon"></div>
       </button>

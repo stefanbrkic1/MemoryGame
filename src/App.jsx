@@ -19,6 +19,11 @@ function App() {
       .catch((error) => console.error(error));
   }, [activePage]);
 
+  function playClickSound() {
+    const buttonClickSound = document.getElementById('buttonClickSound');
+    buttonClickSound.play();
+  }
+
   return (
     <>
       {activePage === 0 ? (
@@ -30,11 +35,12 @@ function App() {
           setCharacters={setCharacters}
           highestScore={highestScore}
           setHighestScore={setHighestScore}
+          playClickSound={playClickSound}
         />
       )}
       <div className="footer-buttons">
-        <SoundButton />
-        <InfoModal />
+        <SoundButton playClickSound={playClickSound} />
+        <InfoModal playClickSound={playClickSound} />
       </div>
     </>
   );

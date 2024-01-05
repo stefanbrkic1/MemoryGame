@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 
-function SoundButton() {
+function SoundButton({ playClickSound }) {
   const [soundState, setSoundState] = useState('off');
 
   useEffect(() => {
@@ -15,18 +15,21 @@ function SoundButton() {
 
   function handleSound() {
     soundState === 'off' ? setSoundState('on') : setSoundState('off');
+    playClickSound();
   }
 
   return (
-    <button
-      type="button"
-      className="home-buttons sound-btn"
-      onClick={handleSound}
-    >
-      <div
-        className={soundState === 'on' ? 'sound-on-icon' : 'sound-off-icon'}
-      ></div>
-    </button>
+    <>
+      <button
+        type="button"
+        className="home-buttons sound-btn"
+        onClick={handleSound}
+      >
+        <div
+          className={soundState === 'on' ? 'sound-on-icon' : 'sound-off-icon'}
+        ></div>
+      </button>
+    </>
   );
 }
 

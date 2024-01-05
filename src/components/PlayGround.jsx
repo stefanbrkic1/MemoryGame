@@ -6,6 +6,7 @@ function PlayGround({
   setCharacters,
   highestScore,
   setHighestScore,
+  playClickSound,
 }) {
   const [round, setRound] = useState(0);
   const [displayingCharacters, setDisplayingCharacters] = useState([]);
@@ -76,11 +77,26 @@ function PlayGround({
     <>
       <div className="playground-top">
         {/*Home Button*/}
-        <div className="home-btn" onClick={setActivePage}></div>
+        <div
+          className="home-btn"
+          onClick={() => {
+            playClickSound();
+            setActivePage();
+          }}
+        >
+          <div className="home-icon"></div>
+        </div>
+
         {/*Scorebaoard */}
-        <div className="scoreboard">
-          <div className="highest-score">HIGHEST SCORE: {highestScore}</div>
-          <div className="current-score">SCORE: {round}</div>
+
+        <div className="current-score">
+          <div className="score-icon"></div>
+          <div className="score-text">
+            SCORE: <span>{round}</span>
+          </div>
+        </div>
+        <div className="highest-score">
+          🎯 HIGHEST SCORE: <span>{highestScore}</span>
         </div>
       </div>
 
