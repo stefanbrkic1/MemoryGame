@@ -138,8 +138,8 @@ function PlayGround({
         {gameOverState !== 'PLAYING' && (
           <>
             <div className="game-over-modal">
-              <div className="game-over-text">GAME OVER</div>
-              <div className="game-over-state">YOU {`${gameOverState}`}</div>
+              <div className="game-over-text">YOU {`${gameOverState}`}</div>
+              <div className="game-over-state">SCORE: {round}</div>
               <button
                 type="button"
                 className="play-again-btn"
