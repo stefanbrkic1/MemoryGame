@@ -252,7 +252,7 @@ body {
 .home-btn {
   cursor: pointer;
   background-color: var(--tertiary-color);
-  padding: 11px;
+  padding: 13px;
   border-radius: 5px;
 }
 
@@ -276,14 +276,10 @@ body {
 
 .current-score,
 .highest-score {
-  background-color: var(--tertiary-color);
-  padding: 11px 20px;
-  border-radius: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 5px;
-  font-weight: bold;
 }
 
 .score-text {
@@ -333,17 +329,18 @@ body {
 }
 
 .scoreboard {
-  background-color: var(--tertiary-color);
-  padding: 10px;
-  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+  font-size: 20rem;
   font-weight: bold;
   text-shadow: 2px 2px 2px #575757;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
 }
 
 .playground-top {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 8px;
   margin-bottom: 20px;
@@ -386,8 +383,15 @@ body {
   .info-para {
     display: none;
   }
+  .home-btn {
+    display: none;
+  }
   .playground-top {
     flex-direction: column;
+  }
+  .current-score,
+  .highest-score {
+    width: 80%;
   }
   .card-text {
     font-size: 15rem;

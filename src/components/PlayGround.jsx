@@ -1,4 +1,6 @@
 import { useState, useEffect } from 'react';
+import { motion } from 'framer-motion';
+import Tilt from 'react-parallax-tilt';
 
 function PlayGround({
   setActivePage,
@@ -89,14 +91,16 @@ function PlayGround({
 
         {/*Scorebaoard */}
 
-        <div className="current-score">
-          <div className="score-icon"></div>
-          <div className="score-text">
-            SCORE: <span>{round}</span>
+        <div className="scoreboard">
+          <div className="current-score">
+            <div className="score-icon"></div>
+            <div className="score-text">
+              SCORE: <span>{round}</span>
+            </div>
           </div>
-        </div>
-        <div className="highest-score">
-          🎯 HIGHEST SCORE: <span>{highestScore}</span>
+          <div className="highest-score">
+            🎯 HIGHEST SCORE: <span>{highestScore}</span>
+          </div>
         </div>
       </div>
 
@@ -105,17 +109,27 @@ function PlayGround({
         <main className="cards-container">
           {displayingCharacters.map((character) => {
             return (
-              <div
-                className="card"
-                key={character.id}
-                onClick={(e) => handleCardClick(character.id)}
+              <Tilt
+                glareEnable={true}
+                glareMaxOpacity={0.6}
+                glareColor="#ffffff"
+                glarePosition="bottom"
+                glareBorderRadius="20px"
               >
-                <div
-                  className="card-image"
-                  style={{ backgroundImage: `url(${character.image})` }}
-                ></div>
-                <div className="card-text">{character.name}</div>
-              </div>
+                <motion.div
+                  key={`${character.id}-${round}`}
+                  initial={{ scale: 0 }}
+                  animate={{ scale: 1 }}
+                  className="card"
+                  onClick={(e) => handleCardClick(character.id)}
+                >
+                  <div
+                    className="card-image"
+                    style={{ backgroundImage: `url(${character.image})` }}
+                  ></div>
+                  <div className="card-text">{character.name}</div>
+                </motion.div>
+              </Tilt>
             );
           })}
         </main>

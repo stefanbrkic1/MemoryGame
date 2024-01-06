@@ -25,7 +25,10 @@ function InfoModal({ playClickSound }) {
             <button
               type="button"
               className="close-modal-btn"
-              onClick={() => setIsModalOpen(false)}
+              onClick={() => {
+                playClickSound();
+                setIsModalOpen(false);
+              }}
             ></button>
           </div>
           <div className="modal-body">
