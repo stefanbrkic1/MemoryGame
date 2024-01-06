@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Tilt from 'react-parallax-tilt';
+import GameOverModal from './GameOverModal';
 
 function PlayGround({
   setActivePage,
@@ -121,7 +122,10 @@ function PlayGround({
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   className="card"
-                  onClick={(e) => handleCardClick(character.id)}
+                  onClick={() => {
+                    playClickSound();
+                    handleCardClick(character.id);
+                  }}
                 >
                   <div
                     className="card-image"
@@ -136,20 +140,12 @@ function PlayGround({
 
         {/*GAME OVER MODAL */}
         {gameOverState !== 'PLAYING' && (
-          <>
-            <div className="game-over-modal">
-              <div className="game-over-text">YOU {`${gameOverState}`}</div>
-              <div className="game-over-state">SCORE: {round}</div>
-              <button
-                type="button"
-                className="play-again-btn"
-                onClick={() => setActivePage(0)}
-              >
-                PLAY AGAIN
-              </button>
-            </div>
-            <div className="overlay"></div>
-          </>
+          <GameOverModal
+            round={round}
+            gameOverState={gameOverState}
+            setActivePage={setActivePage}
+            playClickSound={playClickSound}
+          />
         )}
       </div>
     </>
