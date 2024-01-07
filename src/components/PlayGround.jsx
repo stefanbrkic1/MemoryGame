@@ -109,6 +109,7 @@ function PlayGround({
 
   function handleNextLevel() {
     setGameOverState('PLAYING');
+    setRound(0);
     setLevel((prevLevel) => prevLevel + 1);
     setCharacters(
       characters.map((character) => {
@@ -118,36 +119,14 @@ function PlayGround({
   }
 
   function handleTryAgain() {
-    let roundResetValue = null;
     setGameOverState('PLAYING');
     setCharacters(
       characters.map((character) => {
         return { ...character, isClicked: false };
       }),
     );
-
     // Reset score to starting level value
-    switch (level) {
-      case 1:
-        roundResetValue = 0;
-        break;
-      case 2:
-        roundResetValue = 6;
-        break;
-      case 3:
-        roundResetValue = 12;
-        break;
-      case 4:
-        roundResetValue = 18;
-        break;
-      case 5:
-        roundResetValue = 24;
-        break;
-      case 6:
-        roundResetValue = 30;
-        break;
-    }
-    setRound(roundResetValue);
+    setRound(0);
   }
 
   return (
