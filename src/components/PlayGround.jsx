@@ -11,9 +11,31 @@ function PlayGround({
   setHighestScore,
   playClickSound,
 }) {
+  const [level, setLevel] = useState(0);
   const [round, setRound] = useState(0);
+  const [charactersByLevel, setCharactersByLevel] = useState(
+    characters.slice(0, 6),
+  );
   const [displayingCharacters, setDisplayingCharacters] = useState([]);
   const [gameOverState, setGameOverState] = useState('PLAYING');
+
+  useEffect(() => {
+    if (level === 1) {
+      setCharactersByLevel(characters.slice(0, 11));
+    }
+    if (level === 2) {
+      setCharactersByLevel(characters.slice(0, 17));
+    }
+    if (level === 3) {
+      setCharactersByLevel(characters.slice(0, 23));
+    }
+    if (level === 4) {
+      setCharactersByLevel(characters.slice(0, 29));
+    }
+    if (level === 5) {
+      setCharactersByLevel(characters.slice(0, 34));
+    }
+  }, [characters, level]);
 
   useEffect(() => {
     round > highestScore && setHighestScore((prevScore) => round);
@@ -25,7 +47,7 @@ function PlayGround({
     let newDisplayingCharacters = [];
 
     // Find character that hasn't been clicked yet
-    const notClickedCharacter = characters.find(
+    const notClickedCharacter = charactersByLevel.find(
       (character) => character.isClicked === false,
     );
 
@@ -34,24 +56,24 @@ function PlayGround({
       setGameOverState('WON');
       return;
     } else {
-      usedCharacters.push(characters.indexOf(notClickedCharacter));
+      usedCharacters.push(charactersByLevel.indexOf(notClickedCharacter));
     }
 
     // Get random characters
     for (let i = 0; i < 5; i += 1) {
-      let randomNum = Math.floor(Math.random() * characters.length);
+      let randomNum = Math.floor(Math.random() * charactersByLevel.length);
       while (usedCharacters.includes(randomNum)) {
-        randomNum = Math.floor(Math.random() * characters.length);
+        randomNum = Math.floor(Math.random() * charactersByLevel.length);
       }
       usedCharacters.push(randomNum);
-      newDisplayingCharacters.push(characters[randomNum]);
+      newDisplayingCharacters.push(charactersByLevel[randomNum]);
     }
 
     // Push at least one character that hasn't been clicked to displaying characters
     let randomIndex = Math.floor(Math.random() * 6);
     newDisplayingCharacters.splice(randomIndex, 0, notClickedCharacter);
     setDisplayingCharacters([...newDisplayingCharacters]);
-  }, [round]);
+  }, [charactersByLevel]);
 
   // Set clicked characters isClicked to true and go to next round
   function handleCardClick(characterId) {
@@ -72,8 +94,60 @@ function PlayGround({
       }
     });
 
+    const modifiedCharactersByLevel = charactersByLevel.map((character) => {
+      if (character.id === characterId) {
+        return { ...character, isClicked: true };
+      } else {
+        return character;
+      }
+    });
+
     setCharacters(modifiedCharacters);
+    setCharactersByLevel(modifiedCharactersByLevel);
     setRound((prevRound) => prevRound + 1);
+  }
+
+  function handleNextLevel() {
+    setGameOverState('PLAYING');
+    setLevel((prevLevel) => prevLevel + 1);
+    setCharacters(
+      characters.map((character) => {
+        return { ...character, isClicked: false };
+      }),
+    );
+  }
+
+  function handleTryAgain() {
+    let roundResetValue = null;
+    setGameOverState('PLAYING');
+    setCharacters(
+      characters.map((character) => {
+        return { ...character, isClicked: false };
+      }),
+    );
+
+    // Reset score to starting level value
+    switch (level) {
+      case 0:
+        roundResetValue = 0;
+        break;
+      case 1:
+        roundResetValue = 6;
+        break;
+      case 2:
+        roundResetValue = 12;
+        break;
+      case 3:
+        roundResetValue = 18;
+        break;
+      case 4:
+        roundResetValue = 24;
+        break;
+      case 5:
+        roundResetValue = 30;
+        break;
+    }
+    setRound(roundResetValue);
   }
 
   return (
@@ -93,6 +167,10 @@ function PlayGround({
         {/*Scorebaoard */}
 
         <div className="scoreboard">
+          <div className="current-score">
+            <div className="level-icon"></div>
+            <div className="score-text">{level}</div>
+          </div>
           <div className="current-score">
             <div className="score-icon"></div>
             <div className="score-text">{round}</div>
@@ -141,9 +219,13 @@ function PlayGround({
           <GameOverModal
             round={round}
             gameOverState={gameOverState}
+            handleNextLevel={handleNextLevel}
             setActivePage={setActivePage}
             playClickSound={playClickSound}
             highestScore={highestScore}
+            setLevel={setLevel}
+            handleTryAgain={handleTryAgain}
+            level={level}
           />
         )}
       </div>

@@ -3,9 +3,11 @@ import { useEffect } from 'react';
 function GameOverModal({
   round,
   gameOverState,
-  setActivePage,
+  handleNextLevel,
   playClickSound,
   highestScore,
+  handleTryAgain,
+  level,
 }) {
   useEffect(() => {
     if (gameOverState === 'LOST') {
@@ -33,6 +35,10 @@ function GameOverModal({
         <div className="game-over-text">YOU {`${gameOverState}`}</div>
         <div className="game-over-flex">
           <div className="game-over-state">
+            <div className="level-modal-icon"></div>
+            <div className="score-modal">{level}</div>
+          </div>
+          <div className="game-over-state">
             <div className="score-modal-icon"></div>
             <div className="score-modal"> {round}</div>
           </div>
@@ -46,10 +52,10 @@ function GameOverModal({
           onClick={() => {
             playClickSound();
             stopWinSound();
-            setActivePage(0);
+            gameOverState === 'LOST' ? handleTryAgain() : handleNextLevel();
           }}
         >
-          PLAY AGAIN
+          {gameOverState === 'LOST' ? 'TRY AGAIN' : 'NEXT LEVEL'}
         </button>
       </div>
       <div className="overlay"></div>
