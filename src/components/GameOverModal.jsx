@@ -36,7 +36,7 @@ function GameOverModal({
         <div className="game-over-flex">
           <div className="game-over-state">
             <div className="level-modal-icon"></div>
-            <div className="score-modal">{level - 1}</div>
+            <div className="score-modal">{level}</div>
           </div>
           <div className="game-over-state">
             <div className="score-modal-icon"></div>
