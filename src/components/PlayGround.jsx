@@ -125,6 +125,11 @@ function PlayGround({
         return { ...character, isClicked: false };
       }),
     );
+    setCharactersByLevel(
+      charactersByLevel.map((character) => {
+        return { ...character, isClicked: false };
+      }),
+    );
     // Reset score to starting level value
     setRound(0);
   }
