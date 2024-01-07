@@ -166,6 +166,7 @@ function PlayGround({
           {displayingCharacters.map((character) => {
             return (
               <Tilt
+                key={`${character.id}-${round}`}
                 glareEnable={true}
                 glareMaxOpacity={0.6}
                 glareColor="#ffffff"
@@ -173,7 +174,6 @@ function PlayGround({
                 glareBorderRadius="20px"
               >
                 <motion.div
-                  key={`${character.id}-${round}`}
                   initial={{ scale: 0 }}
                   animate={{ scale: 1 }}
                   className="card"
