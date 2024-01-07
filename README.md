@@ -24,6 +24,7 @@ Rick and Morty Card Memory Game
 
 ![Preview](<./src/assets/img/GitHub(MainPage).jpg>)
 ![Preview](<./src/assets/img/GitHub(MainPage)2.jpg>)
+![Preview](<./src/assets/img/GitHub(MainPage)3.jpg>)
 ![Preview](<./src/assets/img/GitHub(PHONES).jpg>)
 
 > **Note**
