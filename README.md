@@ -59,6 +59,8 @@ Embark on an interdimensional memory adventure with the Rick and Morty Card Memo
 
 ## Features
 
+<br>
+
 - **Diverse Levels**: Dive into the multiverse with multiple levels of increasing difficulty, featuring a variety of Rick and Morty-themed challenges.
 
 - **Score Tracking**: Keep track of your progress with an integrated scoring system.
