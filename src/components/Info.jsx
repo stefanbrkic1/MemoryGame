@@ -32,11 +32,6 @@ function InfoModal({ playClickSound }) {
             ></button>
           </div>
           <div className="modal-body">
-            <div className="info-para">
-              Welcome to the ultimate memory challenge! 🃏 Get ready to test
-              your memory skills in this thrilling card-memory game. Here's how
-              to play:
-            </div>
             <div className="how-to-container">
               <div className="how-to">1. You get a deck of shuffled cards.</div>
               <div className="how-to">
@@ -46,6 +41,9 @@ function InfoModal({ playClickSound }) {
                 3. Difficulty increases with each new level (6 new cards)
               </div>
             </div>
+            <div className="info-para2">🏆 - Number of levels completed</div>
+            <div className="info-para2">⭐ - Current Score</div>
+            <div className="info-para2">🎯 - Highest Score Achieved</div>
             <div className="info-para">
               There are 🏆6 levels of difficulty, see how far you can get!
             </div>

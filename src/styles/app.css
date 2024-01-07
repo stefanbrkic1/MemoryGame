@@ -135,6 +135,7 @@ body {
   background-color: var(--primary-color);
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
 }
 
 .info-para {
@@ -142,6 +143,7 @@ body {
 }
 
 .modal-top {
+  background-color: #cc529b;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -430,6 +432,10 @@ body {
   background-size: contain;
 }
 
+.info-para2 {
+  font-size: 18rem;
+}
+
 /* Smartphones */
 @media only screen and (max-width: 767px) {
   #root {
@@ -476,6 +482,13 @@ body {
     top: 10%;
     left: 50%;
     transform: translate(-50%, -50%);
+  }
+  .how-to {
+    font-size: 16rem;
+    margin-bottom: 20px;
+  }
+  .info-para2 {
+    font-size: 16rem;
   }
 }
 
