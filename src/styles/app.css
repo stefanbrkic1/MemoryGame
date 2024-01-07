@@ -157,6 +157,7 @@ body {
 .how-to {
   font-size: 18rem;
   font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .modal-body {
