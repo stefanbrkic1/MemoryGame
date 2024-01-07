@@ -11,28 +11,28 @@ function PlayGround({
   setHighestScore,
   playClickSound,
 }) {
-  const [level, setLevel] = useState(0);
+  const [level, setLevel] = useState(1);
   const [round, setRound] = useState(0);
+  const [displayingCharacters, setDisplayingCharacters] = useState([]);
+  const [gameOverState, setGameOverState] = useState('PLAYING');
   const [charactersByLevel, setCharactersByLevel] = useState(
     characters.slice(0, 6),
   );
-  const [displayingCharacters, setDisplayingCharacters] = useState([]);
-  const [gameOverState, setGameOverState] = useState('PLAYING');
 
   useEffect(() => {
-    if (level === 1) {
+    if (level === 2) {
       setCharactersByLevel(characters.slice(0, 11));
     }
-    if (level === 2) {
+    if (level === 3) {
       setCharactersByLevel(characters.slice(0, 17));
     }
-    if (level === 3) {
+    if (level === 4) {
       setCharactersByLevel(characters.slice(0, 23));
     }
-    if (level === 4) {
+    if (level === 5) {
       setCharactersByLevel(characters.slice(0, 29));
     }
-    if (level === 5) {
+    if (level === 6) {
       setCharactersByLevel(characters.slice(0, 34));
     }
   }, [characters, level]);
@@ -128,22 +128,22 @@ function PlayGround({
 
     // Reset score to starting level value
     switch (level) {
-      case 0:
+      case 1:
         roundResetValue = 0;
         break;
-      case 1:
+      case 2:
         roundResetValue = 6;
         break;
-      case 2:
+      case 3:
         roundResetValue = 12;
         break;
-      case 3:
+      case 4:
         roundResetValue = 18;
         break;
-      case 4:
+      case 5:
         roundResetValue = 24;
         break;
-      case 5:
+      case 6:
         roundResetValue = 30;
         break;
     }
@@ -169,7 +169,7 @@ function PlayGround({
         <div className="scoreboard">
           <div className="current-score">
             <div className="level-icon"></div>
-            <div className="score-text">{level}</div>
+            <div className="score-text">{level - 1}</div>
           </div>
           <div className="current-score">
             <div className="score-icon"></div>
