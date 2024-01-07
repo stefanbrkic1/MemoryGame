@@ -5,6 +5,7 @@ function SoundButton({ playClickSound }) {
 
   useEffect(() => {
     const audio = document.getElementById('audio');
+    audio.volume = 0.1;
 
     if (soundState === 'on') {
       audio.play();

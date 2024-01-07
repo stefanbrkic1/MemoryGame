@@ -5,6 +5,7 @@ function GameOverModal({
   gameOverState,
   setActivePage,
   playClickSound,
+  highestScore,
 }) {
   useEffect(() => {
     if (gameOverState === 'LOST') {
@@ -16,7 +17,15 @@ function GameOverModal({
     <>
       <div className="game-over-modal">
         <div className="game-over-text">YOU {`${gameOverState}`}</div>
-        <div className="game-over-state">SCORE: {round}</div>
+        <div className="game-over-flex">
+          <div className="game-over-state">
+            <div className="score-modal-icon"></div>
+            <div className="score-modal"> {round}</div>
+          </div>
+          <div className="game-over-state">
+            <div className="score-modal">🎯 {highestScore}</div>
+          </div>
+        </div>
         <button
           type="button"
           className="play-again-btn"

@@ -95,12 +95,10 @@ function PlayGround({
         <div className="scoreboard">
           <div className="current-score">
             <div className="score-icon"></div>
-            <div className="score-text">
-              SCORE: <span>{round}</span>
-            </div>
+            <div className="score-text">{round}</div>
           </div>
           <div className="highest-score">
-            🎯 HIGHEST SCORE: <span>{highestScore}</span>
+            🎯 <span>{highestScore}</span>
           </div>
         </div>
       </div>
@@ -145,6 +143,7 @@ function PlayGround({
             gameOverState={gameOverState}
             setActivePage={setActivePage}
             playClickSound={playClickSound}
+            highestScore={highestScore}
           />
         )}
       </div>
