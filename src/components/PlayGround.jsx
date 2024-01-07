@@ -19,6 +19,7 @@ function PlayGround({
     characters.slice(0, 6),
   );
 
+  // For each level use amount of cards predicted for that level difficulty
   useEffect(() => {
     if (level === 2) {
       setCharactersByLevel(characters.slice(0, 11));
@@ -37,10 +38,6 @@ function PlayGround({
     }
   }, [characters, level]);
 
-  useEffect(() => {
-    round > highestScore && setHighestScore((prevScore) => round);
-  }, [gameOverState]);
-
   //Shuffle characters for each round
   useEffect(() => {
     let usedCharacters = [];
@@ -51,8 +48,8 @@ function PlayGround({
       (character) => character.isClicked === false,
     );
 
+    // If there is no character that hasn't been clicked player won
     if (notClickedCharacter === undefined) {
-      // GAME OVER (WON)
       setGameOverState('WON');
       return;
     } else {
@@ -65,6 +62,7 @@ function PlayGround({
       while (usedCharacters.includes(randomNum)) {
         randomNum = Math.floor(Math.random() * charactersByLevel.length);
       }
+      // Mark random character as used and add it to array of characters that will be displayed
       usedCharacters.push(randomNum);
       newDisplayingCharacters.push(charactersByLevel[randomNum]);
     }
@@ -72,20 +70,27 @@ function PlayGround({
     // Push at least one character that hasn't been clicked to displaying characters
     let randomIndex = Math.floor(Math.random() * 6);
     newDisplayingCharacters.splice(randomIndex, 0, notClickedCharacter);
+
+    // Set final characters that will be displayed
     setDisplayingCharacters([...newDisplayingCharacters]);
   }, [charactersByLevel]);
 
   // Set clicked characters isClicked to true and go to next round
   function handleCardClick(characterId) {
+    // Find character that is clicked
     const clickedCharacter = characters.find(
       (character) => character.id === characterId,
     );
 
-    // GAME OVER (LOST)
+    // Check if player made a mistake(LOST)
     if (clickedCharacter.isClicked === true) {
       setGameOverState('LOST');
+      return;
     }
 
+    //PLAYER MADE A GOOD CHOICE
+
+    // Update character isClicked property to true for the rest leave it as it was
     const modifiedCharacters = characters.map((character) => {
       if (character.id === characterId) {
         return { ...character, isClicked: true };
@@ -94,6 +99,7 @@ function PlayGround({
       }
     });
 
+    // Update character isClicked property to true for the rest leave it as it was
     const modifiedCharactersByLevel = charactersByLevel.map((character) => {
       if (character.id === characterId) {
         return { ...character, isClicked: true };
@@ -104,6 +110,8 @@ function PlayGround({
 
     setCharacters(modifiedCharacters);
     setCharactersByLevel(modifiedCharactersByLevel);
+
+    // Go to next round
     setRound((prevRound) => prevRound + 1);
   }
 
@@ -133,6 +141,11 @@ function PlayGround({
     // Reset score to starting level value
     setRound(0);
   }
+
+  // Handle highest score
+  useEffect(() => {
+    round > highestScore && setHighestScore((prevScore) => round);
+  }, [gameOverState]);
 
   return (
     <>
