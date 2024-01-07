@@ -11,11 +11,25 @@ function GameOverModal({
     if (gameOverState === 'LOST') {
       const gameOverSound = document.getElementById('gameOverSound');
       gameOverSound.play();
+    } else if (gameOverState === 'WON') {
+      const winSound = document.getElementById('winSound');
+      winSound.play();
     }
   }, [gameOverState]);
+
+  function stopWinSound() {
+    const winSound = document.getElementById('winSound');
+    winSound.pause();
+    winSound.currentTime = 0;
+  }
+
   return (
     <>
-      <div className="game-over-modal">
+      <div
+        className={`game-over-modal  ${
+          gameOverState === 'LOST' ? 'modal-lost' : 'modal-won'
+        }`}
+      >
         <div className="game-over-text">YOU {`${gameOverState}`}</div>
         <div className="game-over-flex">
           <div className="game-over-state">
@@ -31,6 +45,7 @@ function GameOverModal({
           className="play-again-btn"
           onClick={() => {
             playClickSound();
+            stopWinSound();
             setActivePage(0);
           }}
         >

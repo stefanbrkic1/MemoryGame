@@ -14,7 +14,7 @@ function App() {
   useEffect(() => {
     fetchData()
       .then((data) => {
-        setCharacters(data);
+        setCharacters(data.slice(1, 7));
       })
       .catch((error) => console.error(error));
   }, [activePage]);

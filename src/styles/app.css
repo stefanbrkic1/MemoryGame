@@ -303,10 +303,6 @@ body {
   top: 45%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background-image: url(../assets/img/lost-wallpaper.jpg);
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   display: flex;
@@ -314,6 +310,20 @@ body {
   align-items: center;
   flex-direction: column;
   gap: 22px;
+}
+
+.modal-lost {
+  background-image: url(../assets/img/lost-wallpaper.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.modal-won {
+  background-image: url(../assets/img/won-wallpaper.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 .game-over-text {
