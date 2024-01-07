@@ -319,6 +319,14 @@ body {
   gap: 22px;
 }
 
+.game-over-level {
+  font-size: 23rem;
+  font-weight: bold;
+  background-color: #fac809;
+  padding: 5px 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+}
+
 .modal-lost {
   background-image: url(../assets/img/lost-wallpaper.jpg);
   background-position: center;

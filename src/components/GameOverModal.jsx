@@ -32,12 +32,9 @@ function GameOverModal({
           gameOverState === 'LOST' ? 'modal-lost' : 'modal-won'
         }`}
       >
+        <div className="game-over-level">LEVEL | {level}</div>
         <div className="game-over-text">YOU {`${gameOverState}`}</div>
         <div className="game-over-flex">
-          <div className="game-over-state">
-            <div className="level-modal-icon"></div>
-            <div className="score-modal">{level - 1}</div>
-          </div>
           <div className="game-over-state">
             <div className="score-modal-icon"></div>
             <div className="score-modal"> {round}</div>
