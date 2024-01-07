@@ -59,17 +59,17 @@ Embark on an interdimensional memory adventure with the Rick and Morty Card Memo
 
 ## Features
 
-**Diverse Levels**: Dive into the multiverse with multiple levels of increasing difficulty, featuring a variety of Rick and Morty-themed challenges.
+- **Diverse Levels**: Dive into the multiverse with multiple levels of increasing difficulty, featuring a variety of Rick and Morty-themed challenges.
 
-**Score Tracking**: Keep track of your progress with an integrated scoring system.
+- **Score Tracking**: Keep track of your progress with an integrated scoring system.
 
-**Highest Score Achievement**: Aim for greatness! Strive to achieve the highest score possible and earn the prestigious title of the ultimate interdimensional memory master.
+- **Highest Score Achievement**: Aim for greatness! Strive to achieve the highest score possible and earn the prestigious title of the ultimate interdimensional memory master.
 
-**Interactive Soundtrack**: Immerse yourself in the Rick and Morty universe with a dynamic soundtrack that reacts to your gameplay, enhancing the overall gaming experience.
+- **Interactive Soundtrack**: Immerse yourself in the Rick and Morty universe with a dynamic soundtrack that reacts to your gameplay, enhancing the overall gaming experience.
 
-**Randomized Card Positions**: Enjoy a fresh challenge every time you play as card positions are randomized, adding an extra layer of unpredictability to each level.
+- **Randomized Card Positions**: Enjoy a fresh challenge every time you play as card positions are randomized, adding an extra layer of unpredictability to each level.
 
-**Visual Effects and Animations**: Watch as the game comes to life with captivating visual effects and animations, capturing the essence of the Rick and Morty universe.
+- **Visual Effects and Animations**: Watch as the game comes to life with captivating visual effects and animations, capturing the essence of the Rick and Morty universe.
 
 - **Cross-Browser Compatibility**: Ensure smooth performance across various web browsers.
 
