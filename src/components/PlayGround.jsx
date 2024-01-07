@@ -171,7 +171,7 @@ function PlayGround({
                 glareMaxOpacity={0.6}
                 glareColor="#ffffff"
                 glarePosition="bottom"
-                glareBorderRadius="20px"
+                glareBorderRadius="15px"
               >
                 <motion.div
                   initial={{ scale: 0 }}
